@@ -1,0 +1,7 @@
+{
+  "name": "IMusic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
