@@ -1,20 +1,153 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button fill="clear">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="8">
+        <p style="text-align: center">IMusic</p>
+      </ion-col>
+      <ion-col class="ion-text-end">
+        <ion-button fill="none">
+          <ion-icon slot="icon-only" name="search"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <section class="new-song-section">
+
+    <div class="header">
+      <h3>New Music</h3>
+      <span>See All</span>
+    </div>
+
+    <div class="content-container">
+
+
+      <div class="new-song-card">
+
+        <div class="info">
+          <span>See you again</span>
+          <span>3:35</span>
+        </div>
+      </div>
+
+      <div class="new-song-card">
+
+        <div class="info">
+          <span>See you again</span>
+          <span>3:35</span>
+        </div>
+      </div>
+
+      <div class="new-song-card">
+
+        <div class="info">
+          <span>See you again</span>
+          <span>3:35</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="fav-song-section">
+
+    <div class="header">
+      <h3>Favourite Music</h3>
+      <span>See All</span>
+    </div>
+
+    <div class="content-container">
+
+      <div class="fav-song-card">
+        <div class="img-container"></div>
+        <div class="info">
+          <p class="song-name">See you again</p>
+          <span class="singer-name">Anonymous</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="artist-section">
+
+    <div class="header">
+      <h3>Artist List</h3>
+      <span>See All</span>
+    </div>
+
+    <div class="content-container">
+
+      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
+      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
+      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
+      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
+      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
+      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
+      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
+      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
+      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
+
+    </div>
+
+  </section>
+
+  <section class="fav-song-section">
+
+    <div class="header">
+      <h3>Favourite Music</h3>
+      <span>See All</span>
+    </div>
+
+    <div class="content-container">
+
+      <div class="fav-song-card">
+        <div class="img-container"></div>
+        <div class="info">
+          <p class="song-name">See you again</p>
+          <span class="singer-name">Anonymous</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="empty-space"></section>
+
 </ion-content>
+
+<section class="nav-footer">
+  <ion-button fill="clear" class="active" [routerLink]="'/home'">
+    <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button fill="clear"  [routerLink]="'/search'">
+    <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button fill="clear" [routerLink]="'/fav'">
+    <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button fill="clear" [routerLink]="'/singers'">
+    <ion-icon slot="icon-only" name="people-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button fill="clear" [routerLink]="'/setting'">
+    <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+  </ion-button>
+
+</section>

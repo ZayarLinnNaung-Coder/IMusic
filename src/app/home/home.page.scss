@@ -1,27 +1,74 @@
-#container {
-  text-align: center;
+section.new-song-section{
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  .content-container{
+
+    .new-song-card{
+      border-radius: 5px;
+      width: 300px;
+      height: 175px;
+      background-color: #f6f7f9;
+      position: relative;
+      background-image: url("https://i1.sndcdn.com/artworks-000118127375-ncecsz-t500x500.jpg");
+      background-size: cover;
+      flex: 0 0 auto;
+      margin-right: 5px;
+
+      .info{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 10px;
+        background-color: #33333399;
+        color: var(--ion-color-light);
+      }
+    }
+  }
+
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+section.fav-song-section {
+
+  .content-container {
+
+    .fav-song-card{
+      margin-right: 5px;
+      .img-container{
+        width: 150px;
+        height: 150px;
+        background-size: cover;
+        background-image: url("https://img.freepik.com/free-vector/abstract-flat-line-with-music-note-motion-shapes-pattern-cover-design-poster-banner-decoration_460848-15092.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716595200&semt=sph");
+        border-radius: 5px;
+      }
+      .info{
+        margin-top: 5px;
+        .song-name{
+          font-weight: bold;
+          font-size: 18px;
+          padding: 0;
+          margin: 0;
+        }
+        .singer-name{
+
+        }
+      }
+    }
+
+  }
+
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+section.artist-section{
 
-  color: #8c8c8c;
+  .content-container{
 
-  margin: 0;
-}
+    img{
+      border-radius: 50%;
+      width: 5rem;
+      height: 5rem;
+      margin-right: 15px;
+    }
 
-#container a {
-  text-decoration: none;
+  }
 }

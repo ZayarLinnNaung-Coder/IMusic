@@ -1,0 +1,108 @@
+.search-section{
+
+  margin: 20px 0;
+
+  .input-group{
+
+    border: 1px solid #33333399;
+    border-radius: 5px;
+    display: flex;
+
+    input{
+      height: 52px;
+      width: 90%;
+      outline: 0;
+      border: none;
+      padding: 0 10px;
+    }
+
+  }
+
+}
+
+section.artist-result-section {
+
+  .content-container {
+
+    .artist-card{
+      margin-right: 5px;
+      .img-container{
+        width: 150px;
+        height: 150px;
+        background-size: cover;
+        background-image: url("https://img.freepik.com/free-vector/abstract-flat-line-with-music-note-motion-shapes-pattern-cover-design-poster-banner-decoration_460848-15092.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716595200&semt=sph");
+        border-radius: 5px;
+      }
+      .info{
+        margin-top: 5px;
+        .song-name{
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+
+  }
+
+}
+
+section.music-list-section{
+
+  margin-top: 15px;
+
+  .category-container{
+    overflow: auto;
+    display: flex;
+    width: 100%;
+
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+
+    &::-webkit-scrollbar {
+      display: none; /* For Chrome, Safari, and Opera */
+    }
+
+    p{
+      &.active{
+        border-radius: 10px;
+        color: #f6f7f9;
+        background: var(--ion-color-primary);
+      }
+      padding: 7px 25px;
+    }
+  }
+
+  .content{
+    .music{
+
+      margin: 15px 0;
+
+      display: flex;
+      align-items: center;
+
+      img{
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+      }
+      .info{
+        width: 100%;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+
+        .text{
+          p{
+            margin: 0;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .love-icon{
+        font-size: 32px;
+      }
+
+    }
+  }
+}

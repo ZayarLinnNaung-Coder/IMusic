@@ -1,0 +1,23 @@
+section.music-uploader{
+  .image-input{
+    width: 200px;
+    height: 200px;
+    background: #f6f7f9;
+  }
+  .music-input{
+    margin-top: 10px;
+    width: 200px;
+    height: 75px;
+    background: #f6f7f9;
+  }
+
+  .input-data-col{
+    input{
+      height: 42px;
+      width: 100%;
+      outline: none;
+      border: 1px solid #33333377;
+      border-radius: 5px;
+    }
+  }
+}

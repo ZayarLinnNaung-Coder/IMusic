@@ -1,0 +1,122 @@
+<ion-header [translucent]="true">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button fill="clear">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="8">
+        <p style="text-align: center">IMusic</p>
+      </ion-col>
+      <ion-col class="ion-text-end">
+        <ion-button fill="none">
+          <ion-icon slot="icon-only" name="search"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+
+  <section class="search-section">
+
+    <div class="input-group">
+      <input type="text">
+      <ion-button>Search</ion-button>
+    </div>
+
+  </section>
+
+  <section class="artist-result-section">
+
+    <div class="header">
+      <h3>Artists</h3>
+    </div>
+
+    <div class="artist-container">
+
+      <div class="artist-card" [routerLink]="'xxx'">
+        <div class="img-container"></div>
+        <div class="info">
+          <p class="song-name">See you again</p>
+        </div>
+      </div>
+
+      <div class="artist-card">
+        <div class="img-container"></div>
+        <div class="info">
+          <p class="song-name">See you again</p>
+        </div>
+      </div>
+
+      <div class="artist-card">
+        <div class="img-container"></div>
+        <div class="info">
+          <p class="song-name">See you again</p>
+        </div>
+      </div>
+
+      <div class="artist-card">
+        <div class="img-container"></div>
+        <div class="info">
+          <p class="song-name">See you again</p>
+        </div>
+      </div>
+
+      <div class="artist-card">
+        <div class="img-container"></div>
+        <div class="info">
+          <p class="song-name">See you again</p>
+        </div>
+      </div>
+
+      <div class="artist-card">
+        <div class="img-container"></div>
+        <div class="info">
+          <p class="song-name">See you again</p>
+        </div>
+      </div>
+
+      <div class="artist-card">
+        <div class="img-container"></div>
+        <div class="info">
+          <p class="song-name">See you again</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="empty-space"></section>
+
+</ion-content>
+
+
+
+<section class="nav-footer">
+  <ion-button fill="clear" [routerLink]="'/home'">
+    <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button fill="clear" [routerLink]="'/search'">
+    <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button fill="clear" [routerLink]="'/fav'">
+    <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button fill="clear" class="active" [routerLink]="'/singers'">
+    <ion-icon slot="icon-only" name="people-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button fill="clear" [routerLink]="'/setting'">
+    <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+  </ion-button>
+
+</section>
