@@ -25,8 +25,8 @@
   <section class="search-section">
 
     <div class="input-group">
-      <input type="text">
-      <ion-button>Search</ion-button>
+      <input type="text" #artistNameInput>
+      <ion-button (click)="search(artistNameInput.value)">Search</ion-button>
     </div>
 
   </section>
@@ -39,52 +39,10 @@
 
     <div class="artist-container">
 
-      <div class="artist-card" [routerLink]="'xxx'">
-        <div class="img-container"></div>
+      <div class="artist-card" *ngFor="let a of filterArtists" (click)="routeToSingerDetails(a)">
+        <div class="img-container" [style.backgroundImage]="'url(' + a.image + ')'"></div>
         <div class="info">
-          <p class="song-name">See you again</p>
-        </div>
-      </div>
-
-      <div class="artist-card">
-        <div class="img-container"></div>
-        <div class="info">
-          <p class="song-name">See you again</p>
-        </div>
-      </div>
-
-      <div class="artist-card">
-        <div class="img-container"></div>
-        <div class="info">
-          <p class="song-name">See you again</p>
-        </div>
-      </div>
-
-      <div class="artist-card">
-        <div class="img-container"></div>
-        <div class="info">
-          <p class="song-name">See you again</p>
-        </div>
-      </div>
-
-      <div class="artist-card">
-        <div class="img-container"></div>
-        <div class="info">
-          <p class="song-name">See you again</p>
-        </div>
-      </div>
-
-      <div class="artist-card">
-        <div class="img-container"></div>
-        <div class="info">
-          <p class="song-name">See you again</p>
-        </div>
-      </div>
-
-      <div class="artist-card">
-        <div class="img-container"></div>
-        <div class="info">
-          <p class="song-name">See you again</p>
+          <p class="song-name">{{a.name}}</p>
         </div>
       </div>
 

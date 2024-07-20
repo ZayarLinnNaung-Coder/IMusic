@@ -4,7 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { SettingPage } from './setting.page';
 import {SettingRoutingModule} from "./setting-routing.module";
-
+import { LoadingScreenPage } from '../loading-screen/loading-screen.page';
 
 
 @NgModule({
@@ -14,6 +14,6 @@ import {SettingRoutingModule} from "./setting-routing.module";
     IonicModule,
     SettingRoutingModule
   ],
-  declarations: [SettingPage]
+  declarations: [SettingPage, LoadingScreenPage]
 })
 export class SettingModule {}

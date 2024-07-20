@@ -8,7 +8,6 @@ section.new-song-section{
       height: 175px;
       background-color: #f6f7f9;
       position: relative;
-      background-image: url("https://i1.sndcdn.com/artworks-000118127375-ncecsz-t500x500.jpg");
       background-size: cover;
       flex: 0 0 auto;
       margin-right: 5px;
@@ -63,11 +62,13 @@ section.artist-section{
 
   .content-container{
 
-    img{
-      border-radius: 50%;
-      width: 5rem;
-      height: 5rem;
-      margin-right: 15px;
+    .artist-card{
+      border-radius: 5px;
+      width: 7rem;
+      position: relative;
+      background-size: cover;
+      flex: 0 0 auto;
+      margin-right: 5px;
     }
 
   }

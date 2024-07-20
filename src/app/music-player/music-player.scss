@@ -1,0 +1,14 @@
+.musicplayer{
+  width: 90%;
+  position: fixed;
+  background-color: #eeeeee;
+  z-index: 1000;
+  padding: 15px 20px;
+  border-radius: 15px;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

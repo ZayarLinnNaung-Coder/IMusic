@@ -1,15 +1,4 @@
 section.music-uploader{
-  .image-input{
-    width: 200px;
-    height: 200px;
-    background: #f6f7f9;
-  }
-  .music-input{
-    margin-top: 10px;
-    width: 200px;
-    height: 75px;
-    background: #f6f7f9;
-  }
 
   .input-data-col{
     input{
@@ -20,4 +9,30 @@ section.music-uploader{
       border-radius: 5px;
     }
   }
+}
+
+.category-uploader{
+  form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    input{
+      padding: 0 10px;
+      width: 300px;
+      height: 48px;
+    }
+  }
+}
+
+.image-input{
+  width: 100%;
+  height: 200px;
+  background: #f6f7f9;
+}
+
+.music-input{
+  margin-top: 10px;
+  width: 200px;
+  height: 75px;
+  background: #f6f7f9;
 }

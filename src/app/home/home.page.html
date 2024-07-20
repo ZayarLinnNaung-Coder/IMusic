@@ -32,27 +32,10 @@
     <div class="content-container">
 
 
-      <div class="new-song-card">
+      <div class="new-song-card" *ngFor="let m of musics" [style.backgroundImage]="'url(' + m.imageUrl + ')'">
 
         <div class="info">
-          <span>See you again</span>
-          <span>3:35</span>
-        </div>
-      </div>
-
-      <div class="new-song-card">
-
-        <div class="info">
-          <span>See you again</span>
-          <span>3:35</span>
-        </div>
-      </div>
-
-      <div class="new-song-card">
-
-        <div class="info">
-          <span>See you again</span>
-          <span>3:35</span>
+          <span>{{m.title}}</span>
         </div>
       </div>
 
@@ -90,15 +73,10 @@
 
     <div class="content-container">
 
-      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
-      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
-      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
-      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
-      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
-      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
-      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
-      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
-      <img src="https://hips.hearstapps.com/hmg-prod/images/mh-1-27-love-songs-1611762837.jpg?crop=0.301xw:0.603xh;0.699xw,0.0481xh&resize=640:*" alt="">
+      <div class="artist-card" *ngFor="let a of artists">
+        <img [src]="a.image" alt="">
+        <p>{{a.name}}</p>
+      </div>
 
     </div>
 
@@ -107,7 +85,7 @@
   <section class="fav-song-section">
 
     <div class="header">
-      <h3>Favourite Music</h3>
+      <h3>Recent Music</h3>
       <span>See All</span>
     </div>
 

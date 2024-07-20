@@ -20,30 +20,69 @@
 
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+<app-loading-screen [showLoadingScreen]="showLoading"></app-loading-screen>
 
-    <section class="music-uploader">
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+    <section class="category-uploader">
+      
+      <p>Music Category</p>
+      
+      <form>
+        <input type="text" placeholder="Enter music category" [(ngModel)]="newMusicCategoryName" name="categoryName">
+        <ion-button expand="block" (click)="addNewMusicCategory()">Upload</ion-button>
+      </form>
+    
+    </section>
+    
+    <section class="artist-uploader">
+      
+      <p>Artist</p>
+
       <ion-grid>
         <ion-row>
 
           <ion-col>
-            <div class="image-input"></div>
-            <div class="music-input"></div>
+            <div class="image-input" #artistImage (click)="artistImageInput.click()" [style.backgroundImage]="'url(' + artistBackgroundImage + ')'"></div>
+            <input type="file" #artistImageInput hidden (change)="onUploadArtistImage($event)">
+          </ion-col>
+
+          <ion-col class="input-data-col">
+            <label for="title">Artist Name</label>
+            <ion-input fill="outline" placeholder="Enter artist name" [(ngModel)]="newArtistName" name="artistName"></ion-input>
+
+            <br>
+
+            <ion-button expand="block" (click)="addNewArtist()">Upload</ion-button>
+
+
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </section>
+
+    <section class="music-uploader">
+      <p>Music</p>
+      <ion-grid>
+        <ion-row>
+
+          <ion-col>
+            <div class="image-input" (click)="musicBackgroundImageInput.click()" [style.backgroundImage]="'url(' + musicBackgroundImage + ')'"></div>
+            <ion-input type="file" #music (change)="uploadMusic($event)"></ion-input>
+            <input type="file" hidden #musicBackgroundImageInput (change)="uploadMusicBackground($event)">
           </ion-col>
 
           <ion-col class="input-data-col">
             <label for="title">Title</label>
-            <ion-input fill="outline" placeholder="Enter text"></ion-input>
+            <ion-input fill="outline" placeholder="Enter music title" [(ngModel)]="musicTitle"></ion-input>
 
             <br>
 
             <label for="category">Category</label>
             <ion-list id="category">
               <ion-item>
-                <ion-select aria-label="Favorite Fruit" value="apple">
-                  <ion-select-option value="apple">Apple</ion-select-option>
-                  <ion-select-option value="banana">Banana</ion-select-option>
-                  <ion-select-option value="orange">Orange</ion-select-option>
+                <ion-select [(ngModel)]="selectedCategoryId">
+                  <ion-select-option *ngFor="let c of musicCategories" [value]="c.id">{{c.name}}</ion-select-option>
                 </ion-select>
               </ion-item>
             </ion-list>
@@ -53,17 +92,15 @@
             <label for="singer">Singer</label>
             <ion-list id="singer">
               <ion-item>
-                <ion-select aria-label="Favorite Fruit" value="apple">
-                  <ion-select-option value="apple">Apple</ion-select-option>
-                  <ion-select-option value="banana">Banana</ion-select-option>
-                  <ion-select-option value="orange">Orange</ion-select-option>
+                <ion-select [(ngModel)]="selectedArtistId">
+                  <ion-select-option *ngFor="let a of artists" [value]="a.id">{{a.name}}</ion-select-option>
                 </ion-select>
               </ion-item>
             </ion-list>
 
             <br>
 
-            <ion-button expand="block">Upload</ion-button>
+            <ion-button expand="block" (click)="uploadNewMusic()">Upload</ion-button>
 
 
           </ion-col>

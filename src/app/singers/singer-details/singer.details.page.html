@@ -1,8 +1,8 @@
 <ion-content [fullscreen]="true">
-  <section class="artist-info ion-padding">
+  <section class="artist-info ion-padding" [style.backgroundImage]="'url(' + singer.image + ')'">
     <div class="info">
-      <p class="singer-name">J.Smith</p>
-      <p class="singer-id">ID: 1234253</p>
+      <p class="singer-name">{{singer.name}}</p>
+      <p class="singer-id">ID: {{singer.id}}</p>
     </div>
   </section>
 
@@ -29,96 +29,16 @@
 
       <div class="content">
 
-        <div class="music">
+        <div class="music" *ngFor="let m of musicList">
 
-          <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="">
-
-          <div class="info">
-            <div class="text">
-              <p>See you again</p>
-              <span>xxx</span>
-            </div>
-            <span>3:45</span>
-          </div>
-
-          <ion-icon class="love-icon" name="heart-outline"></ion-icon>
-
-        </div>
-
-        <div class="music">
-
-          <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="">
+          <img [src]="m.imageUrl" alt="">
 
           <div class="info">
             <div class="text">
-              <p>See you again</p>
-              <span>xxx</span>
+              <p>{{m.title}}</p>
+              <span>{{singer.name}}</span>
             </div>
-            <span>3:45</span>
-          </div>
-
-          <ion-icon class="love-icon" name="heart-outline"></ion-icon>
-
-        </div>
-
-        <div class="music">
-
-          <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="">
-
-          <div class="info">
-            <div class="text">
-              <p>See you again</p>
-              <span>xxx</span>
-            </div>
-            <span>3:45</span>
-          </div>
-
-          <ion-icon class="love-icon" name="heart-outline"></ion-icon>
-
-        </div>
-
-        <div class="music">
-
-          <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="">
-
-          <div class="info">
-            <div class="text">
-              <p>See you again</p>
-              <span>xxx</span>
-            </div>
-            <span>3:45</span>
-          </div>
-
-          <ion-icon class="love-icon" name="heart-outline"></ion-icon>
-
-        </div>
-
-        <div class="music">
-
-          <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="">
-
-          <div class="info">
-            <div class="text">
-              <p>See you again</p>
-              <span>xxx</span>
-            </div>
-            <span>3:45</span>
-          </div>
-
-          <ion-icon class="love-icon" name="heart-outline"></ion-icon>
-
-        </div>
-
-        <div class="music">
-
-          <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="">
-
-          <div class="info">
-            <div class="text">
-              <p>See you again</p>
-              <span>xxx</span>
-            </div>
-            <span>3:45</span>
+            <span></span>
           </div>
 
           <ion-icon class="love-icon" name="heart-outline"></ion-icon>
@@ -134,21 +54,21 @@
 
 </ion-content>
 
-
-
-
-
 <section class="nav-footer">
   <ion-button fill="clear" [routerLink]="'/home'">
     <ion-icon slot="icon-only" name="home-outline"></ion-icon>
   </ion-button>
 
-  <ion-button fill="clear" class="active"  [routerLink]="'/search'">
+  <ion-button fill="clear" [routerLink]="'/search'">
     <ion-icon slot="icon-only" name="search-outline"></ion-icon>
   </ion-button>
 
   <ion-button fill="clear" [routerLink]="'/fav'">
     <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button fill="clear" class="active" [routerLink]="'/singers'">
+    <ion-icon slot="icon-only" name="people-outline"></ion-icon>
   </ion-button>
 
   <ion-button fill="clear" [routerLink]="'/setting'">
