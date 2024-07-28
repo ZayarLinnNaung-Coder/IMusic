@@ -32,7 +32,7 @@
     <div class="content-container">
 
 
-      <div class="new-song-card" *ngFor="let m of musics" [style.backgroundImage]="'url(' + m.imageUrl + ')'">
+      <div class="new-song-card" *ngFor="let m of musics" [style.backgroundImage]="'url(' + m.imageUrl + ')'" (click)="playMusic(m)">
 
         <div class="info">
           <span>{{m.title}}</span>
@@ -52,11 +52,11 @@
 
     <div class="content-container">
 
-      <div class="fav-song-card">
-        <div class="img-container"></div>
+      <div class="fav-song-card" *ngFor="let fav of favMusics" (click)="playMusic(fav)">
+        <div class="img-container" [style.backgroundImage]="'url(' + fav.imageUrl + ')'"></div>
         <div class="info">
-          <p class="song-name">See you again</p>
-          <span class="singer-name">Anonymous</span>
+          <p class="song-name">{{fav.title}}</p>
+          <span class="singer-name">{{fav.artists.name}}</span>
         </div>
       </div>
 

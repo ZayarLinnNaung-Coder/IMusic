@@ -113,3 +113,9 @@ section.nav-footer{
 .button-inner{
   color: #333 !important;
 }
+
+ion-icon{
+  &.fav{
+    color: blue;
+  }
+}

@@ -25,8 +25,8 @@
   <section class="search-section">
 
     <div class="input-group">
-      <input type="text">
-      <ion-button>Search</ion-button>
+      <input type="text" #inputData>
+      <ion-button (click)="search(inputData.value)">Search</ion-button>
     </div>
 
   </section>
@@ -34,109 +34,23 @@
   <section class="music-list-section">
 
     <div class="category-container">
-      <p class="active">All</p>
-      <p>Pop</p>
-      <p>Rock</p>
-      <p>HipHop</p>
-      <p>Electro</p>
-      <p>Other</p>
+      <p class="categoryTag active" (click)="filterByCategory('all', $event)">All</p>
+      <p class="categoryTag" *ngFor="let c of musicCategories" (click)="filterByCategory(c.id, $event)">{{c.name}}</p>
     </div>
 
     <div class="content">
 
-      <div class="music">
+      <div class="music" *ngFor="let m of filterMusics">
 
         <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="">
 
         <div class="info">
           <div class="text">
-            <p>See you again</p>
-            <span>xxx</span>
+            <p>{{m.title}}</p>
+            <span>{{m.artists.name}}</span>
           </div>
           <span>3:45</span>
         </div>
-
-        <ion-icon class="love-icon" name="heart-outline"></ion-icon>
-
-      </div>
-
-      <div class="music">
-
-        <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="">
-
-        <div class="info">
-          <div class="text">
-            <p>See you again</p>
-            <span>xxx</span>
-          </div>
-          <span>3:45</span>
-        </div>
-
-        <ion-icon class="love-icon" name="heart-outline"></ion-icon>
-
-      </div>
-
-      <div class="music">
-
-        <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="">
-
-        <div class="info">
-          <div class="text">
-            <p>See you again</p>
-            <span>xxx</span>
-          </div>
-          <span>3:45</span>
-        </div>
-
-        <ion-icon class="love-icon" name="heart-outline"></ion-icon>
-
-      </div>
-
-      <div class="music">
-
-        <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="">
-
-        <div class="info">
-          <div class="text">
-            <p>See you again</p>
-            <span>xxx</span>
-          </div>
-          <span>3:45</span>
-        </div>
-
-        <ion-icon class="love-icon" name="heart-outline"></ion-icon>
-
-      </div>
-
-      <div class="music">
-
-        <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="">
-
-        <div class="info">
-          <div class="text">
-            <p>See you again</p>
-            <span>xxx</span>
-          </div>
-          <span>3:45</span>
-        </div>
-
-        <ion-icon class="love-icon" name="heart-outline"></ion-icon>
-
-      </div>
-
-      <div class="music">
-
-        <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="">
-
-        <div class="info">
-          <div class="text">
-            <p>See you again</p>
-            <span>xxx</span>
-          </div>
-          <span>3:45</span>
-        </div>
-
-        <ion-icon class="love-icon" name="heart-outline"></ion-icon>
 
       </div>
 

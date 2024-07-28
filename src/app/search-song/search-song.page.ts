@@ -3,6 +3,7 @@ import { ArtistService } from '../service/artist.service';
 import { MusicService } from '../service/music.service';
 import { NewMusicService } from '../service/new-music-service';
 import { TimSort } from '../utils/TimSort';
+import { MusicCategoryService } from '../service/music-category.service';
 
 @Component({
   selector: 'app-search-song',
@@ -13,11 +14,19 @@ export class SearchSongPage {
 
   artists: any[] = []
   musics: any[] = []
+  musicCategories: any[] = []
 
   filterArtists: any[] = []
   filterMusics: any[] = []
 
-  constructor(private artistService: ArtistService, private musicService: NewMusicService) {
+  constructor(
+    private artistService: ArtistService, 
+    private musicService: NewMusicService,
+    private musicCategoryService: MusicCategoryService) {
+
+  }
+
+  ionViewWillEnter(){
 
     this.artistService.getAllArtists().subscribe((response : any) => {
       this.artists = response
@@ -28,9 +37,48 @@ export class SearchSongPage {
     this.musicService.getAllMusics().subscribe((response : any) => {
       this.musics = response
       this.filterMusics = response
+      console.log(this.musics)
       new TimSort().timsort(this.musics, 'title')
     })
 
+    this.musicCategoryService.getAllMusicCategories().subscribe((cat: any) => {
+      this.musicCategories = cat
+    })
+    
+  }
+
+  toogleMusicFavourite(musicId: string, isFav: boolean) {
+    this.musicService.makeMusicFavourite(musicId, !isFav).subscribe(result => {
+      this.musics.filter(m => m.id == musicId).at(0).favorite = !isFav
+    });
+  }
+
+  filterByCategory(categoryId: string, event: any) {
+    document.querySelectorAll('.categoryTag').forEach(c => {
+      c.classList.remove('active')
+    })
+
+    event.target.classList.add('active')
+
+    console.log(this.musics)
+    if(categoryId == 'all'){
+      this.filterMusics = this.musics
+    } else{
+
+      this.filterMusics = []
+      for(let i = 0; i < this.musics.length; i++){
+        console.log(this.musics[i].musicCategory.id)
+        if(this.musics[i].musicCategory.id == categoryId){
+          this.filterMusics.push(this.musics[i])
+        }
+      }
+    }
+
+  } 
+
+
+  playMusic(music: any) {
+    this.musicService.changeCurrentMusic(music)
   }
 
   search(value: string) {

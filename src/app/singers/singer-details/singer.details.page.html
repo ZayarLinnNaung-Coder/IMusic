@@ -10,8 +10,8 @@
     <section class="search-section">
 
       <div class="input-group">
-        <input type="text">
-        <ion-button>Search</ion-button>
+        <input type="text" #inputData>
+        <ion-button (click)="search(inputData.value)">Search</ion-button>
       </div>
 
     </section>
@@ -19,17 +19,13 @@
     <section class="music-list-section">
 
       <div class="category-container">
-        <p class="active">All</p>
-        <p>Pop</p>
-        <p>Rock</p>
-        <p>HipHop</p>
-        <p>Electro</p>
-        <p>Other</p>
+        <p class="categoryTag active" (click)="filterByCategory('all', $event)">All</p>
+        <p *ngFor="let c of musicCategories" class="categoryTag" (click)="filterByCategory(c.id, $event)">{{c.name}}</p>
       </div>
 
       <div class="content">
 
-        <div class="music" *ngFor="let m of musicList">
+        <div class="music" *ngFor="let m of filterMusics" (click)="playMusic(m)">
 
           <img [src]="m.imageUrl" alt="">
 
@@ -41,7 +37,7 @@
             <span></span>
           </div>
 
-          <ion-icon class="love-icon" name="heart-outline"></ion-icon>
+          <ion-icon class="love-icon" name="heart-outline" [ngClass]="m.favorite ? 'fav': ''" (click)="toogleMusicFavourite(m.id, m.favorite)"></ion-icon>
 
         </div>
 

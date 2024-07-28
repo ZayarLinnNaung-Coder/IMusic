@@ -1,9 +1,9 @@
 <div class="musicplayer">
-    <span>Music Title</span>
+    <span>{{currentMusic?.title}}</span>
 
 
     <div class="btn-group">
-        <ion-button fill="clear">
+        <ion-button fill="clear" (click)="previousAudio()">
             <
         </ion-button>
     
@@ -15,7 +15,7 @@
             <ion-icon slot="icon-only" name="pause-outline"></ion-icon>
         </ion-button>
     
-        <ion-button fill="clear">
+        <ion-button fill="clear" (click)="nextAudio()">
             >
         </ion-button>
     

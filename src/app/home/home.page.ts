@@ -11,6 +11,7 @@ import { TimSort } from '../utils/TimSort';
 export class HomePage {
 
   musics: any[] = []
+  favMusics: any[] = []
   artists: any[] = []
 
   constructor(
@@ -18,7 +19,16 @@ export class HomePage {
     private artistService: ArtistService
   ) {
     this.fetchMusics()
+    this.fetchFavMusics()
     this.fetchArtists()
+  }
+
+  ionViewWillEnter(){
+
+    this.fetchMusics()
+    this.fetchFavMusics()
+    this.fetchArtists()
+    
   }
 
   fetchMusics(){
@@ -28,11 +38,24 @@ export class HomePage {
     })
   }
 
+  fetchFavMusics(){
+    this.newMusicService.getAllFavMusics().subscribe((resposne: any) => {
+      this.favMusics = resposne
+      new TimSort().timsort(this.musics, 'title')
+    })
+  }
+
+
+
   fetchArtists(){
     this.artistService.getAllArtists().subscribe((response: any) => {
       this.artists = response
       new TimSort().timsort(this.artists, 'name')
     })
+  }
+
+  playMusic(music: any) {
+    this.newMusicService.changeCurrentMusic(music)
   }
 
 }

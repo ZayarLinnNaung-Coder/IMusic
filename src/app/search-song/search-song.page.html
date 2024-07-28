@@ -52,17 +52,13 @@
   <section class="music-list-section">
 
     <div class="category-container">
-      <p class="active">All</p>
-      <p>Pop</p>
-      <p>Rock</p>
-      <p>HipHop</p>
-      <p>Electro</p>
-      <p>Other</p>
+      <p class="categoryTag active" (click)="filterByCategory('all', $event)">All</p>
+      <p class="categoryTag" *ngFor="let c of musicCategories" (click)="filterByCategory(c.id, $event)">{{c.name}}</p>
     </div>
 
     <div class="content">
 
-      <div class="music" *ngFor="let m of filterMusics">
+      <div class="music" *ngFor="let m of filterMusics" (click)="playMusic(m)">
 
         <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="">
 
@@ -73,7 +69,7 @@
           </div>
         </div>
 
-        <ion-icon class="love-icon" name="heart-outline"></ion-icon>
+        <ion-icon class="love-icon" [ngClass]="m.favorite ? 'fav': ''" name="heart-outline" (click)="toogleMusicFavourite(m.id, m.favorite)"></ion-icon>
 
       </div>
 
