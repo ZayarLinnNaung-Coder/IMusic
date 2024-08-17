@@ -37,7 +37,9 @@
 //@import "@ionic/angular/css/palettes/dark.system.css";
 
 ion-header{
-  box-shadow: none;
+  box-shadow: none !important;
+  background-color: #ffffff !important;
+  
 }
 
 

@@ -10,6 +10,10 @@ import { TimSort } from '../utils/TimSort';
 })
 export class FavSongPage {
 
+  playMusic(music: any) {
+    this.musicService.changeCurrentMusic(music)
+  }
+
   musics: any[] = []
   musicCategories: any[] = []
 

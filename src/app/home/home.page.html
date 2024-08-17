@@ -43,27 +43,6 @@
 
   </section>
 
-  <section class="fav-song-section">
-
-    <div class="header">
-      <h3>Favourite Music</h3>
-      <span>See All</span>
-    </div>
-
-    <div class="content-container">
-
-      <div class="fav-song-card" *ngFor="let fav of favMusics" (click)="playMusic(fav)">
-        <div class="img-container" [style.backgroundImage]="'url(' + fav.imageUrl + ')'"></div>
-        <div class="info">
-          <p class="song-name">{{fav.title}}</p>
-          <span class="singer-name">{{fav.artists.name}}</span>
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
   <section class="artist-section">
 
     <div class="header">
@@ -85,17 +64,17 @@
   <section class="fav-song-section">
 
     <div class="header">
-      <h3>Recent Music</h3>
+      <h3>Favourite Music</h3>
       <span>See All</span>
     </div>
 
     <div class="content-container">
 
-      <div class="fav-song-card">
-        <div class="img-container"></div>
+      <div class="fav-song-card" *ngFor="let fav of favMusics" (click)="playMusic(fav)">
+        <div class="img-container" [style.backgroundImage]="'url(' + fav.imageUrl + ')'"></div>
         <div class="info">
-          <p class="song-name">See you again</p>
-          <span class="singer-name">Anonymous</span>
+          <p class="song-name">{{fav.title}}</p>
+          <span class="singer-name">{{fav.artists.name}}</span>
         </div>
       </div>
 

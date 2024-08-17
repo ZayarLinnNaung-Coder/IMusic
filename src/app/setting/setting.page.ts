@@ -4,6 +4,7 @@ import { ArtistService } from '../service/artist.service';
 import { MusicService } from '../service/music.service';
 import { NewMusicService } from '../service/new-music-service';
 import { LoadingController } from '@ionic/angular/providers/loading-controller';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-fav-song',
@@ -31,7 +32,8 @@ export class SettingPage implements OnInit{
     private musicCategoryService: MusicCategoryService,
     private artistService: ArtistService,
     private musicService: MusicService,
-    private newMusicService: NewMusicService
+    private newMusicService: NewMusicService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -70,6 +72,7 @@ export class SettingPage implements OnInit{
 
     this.newMusicService.addNewMusicCategory(music).subscribe(response => {
       console.log(response)
+      this.router.navigate(['']);
     })
   }
 

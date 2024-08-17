@@ -2,13 +2,20 @@ section.music-uploader{
 
   .input-data-col{
     input{
+      border-radius: 10px;
+      border: 1px solid #77777799;
+      outline: none;
       height: 42px;
       width: 100%;
       outline: none;
-      border: 1px solid #33333377;
-      border-radius: 5px;
     }
   }
+}
+
+.input{
+  border-radius: 10px;
+  border: 1px solid #77777799;
+  outline: none
 }
 
 .category-uploader{
