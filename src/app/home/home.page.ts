@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NewMusicService } from '../service/new-music-service';
 import { ArtistService } from '../service/artist.service';
 import { TimSort } from '../utils/TimSort';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ export class HomePage {
 
   constructor(
     private newMusicService: NewMusicService,
-    private artistService: ArtistService
+    private artistService: ArtistService,
+    private router: Router
   ) {
     this.fetchMusics()
     this.fetchFavMusics()
@@ -56,6 +58,11 @@ export class HomePage {
 
   playMusic(music: any) {
     this.newMusicService.changeCurrentMusic(music)
+  }
+
+  routeToSingerDetails(singer: any) {
+    localStorage.setItem('SINGER', JSON.stringify(singer));
+    this.router.navigate([`singers/${singer.id}`])
   }
 
 }

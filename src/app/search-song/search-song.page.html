@@ -40,7 +40,7 @@
 
     <div class="content-container">
 
-      <div class="artist-card" *ngFor="let a of filterArtists">
+      <div class="artist-card" *ngFor="let a of filterArtists" (click)="routeToSingerDetails(a)">
         <img [src]="a.image">
         <p>{{a.name}}</p>
       </div>
@@ -98,7 +98,7 @@
   <ion-button fill="clear" [routerLink]="'/singers'">
     <ion-icon slot="icon-only" name="people-outline"></ion-icon>
   </ion-button>
-
+  
   <ion-button fill="clear" [routerLink]="'/setting'">
     <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
   </ion-button>

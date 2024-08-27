@@ -4,6 +4,7 @@ import { MusicService } from '../service/music.service';
 import { NewMusicService } from '../service/new-music-service';
 import { TimSort } from '../utils/TimSort';
 import { MusicCategoryService } from '../service/music-category.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-song',
@@ -22,7 +23,8 @@ export class SearchSongPage {
   constructor(
     private artistService: ArtistService, 
     private musicService: NewMusicService,
-    private musicCategoryService: MusicCategoryService) {
+    private musicCategoryService: MusicCategoryService,
+    private router: Router) {
 
   }
 
@@ -79,6 +81,11 @@ export class SearchSongPage {
 
   playMusic(music: any) {
     this.musicService.changeCurrentMusic(music)
+  }
+
+  routeToSingerDetails(singer: any) {
+    localStorage.setItem('SINGER', JSON.stringify(singer));
+    this.router.navigate([`singers/${singer.id}`])
   }
 
   search(value: string) {

@@ -72,7 +72,7 @@ export class SettingPage implements OnInit{
 
     this.newMusicService.addNewMusicCategory(music).subscribe(response => {
       console.log(response)
-      this.router.navigate(['']);
+      // this.router.navigate(['']);
     })
   }
 
