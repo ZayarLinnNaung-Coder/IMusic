@@ -11,9 +11,6 @@
         <p style="text-align: center">IMusic</p>
       </ion-col>
       <ion-col class="ion-text-end">
-        <ion-button fill="none">
-          <ion-icon slot="icon-only" name="search"></ion-icon>
-        </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -24,18 +21,18 @@
 
 <ion-content [fullscreen]="true" class="ion-padding-horizontal">
     <section class="category-uploader">
-      
+
       <p>Music Category</p>
-      
+
       <form>
         <input type="text" class="input" placeholder="Enter music category" [(ngModel)]="newMusicCategoryName" name="categoryName">
         <ion-button expand="block" (click)="addNewMusicCategory()">Upload</ion-button>
       </form>
-    
+
     </section>
-    
+
     <section class="artist-uploader">
-      
+
       <p>Artist</p>
 
       <ion-grid>

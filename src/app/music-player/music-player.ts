@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['music-player.scss'],
 })
 export class MusicPlayer implements OnInit, OnDestroy{
-  
+
   @Input() showMusicPlayer: boolean = false;
   isPlaying: boolean = false;
 
@@ -17,7 +17,7 @@ export class MusicPlayer implements OnInit, OnDestroy{
   currentMusic: any;
 
   isPreloaded: boolean = false
-  
+
   private musicChangeSubscription!: Subscription;
 
   constructor(private musicService: NewMusicService) {
@@ -34,6 +34,7 @@ export class MusicPlayer implements OnInit, OnDestroy{
 
   ngOnInit() {
     this.musicChangeSubscription = this.musicService.changeMusic$.subscribe((music: any) => {
+      this.showMusicPlayer = true
       this.changeCurrentMusic(music);
     });
   }
@@ -46,7 +47,7 @@ export class MusicPlayer implements OnInit, OnDestroy{
 
   async preloadAudio() {
     try {
-      
+
       await NativeAudio.preload({
         assetPath: this.currentMusic?.url,
         assetId: 'uniqueId1',
@@ -61,7 +62,7 @@ export class MusicPlayer implements OnInit, OnDestroy{
   }
 
   async playAudio() {
-    
+
     this.isPlaying = true
 
     this.preloadAudio();

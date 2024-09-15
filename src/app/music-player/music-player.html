@@ -1,24 +1,27 @@
-<div class="musicplayer">
-    <span>{{currentMusic?.title}}</span>
+<div class="musicplayer" *ngIf="showMusicPlayer">
+    <span>{{currentMusic?.title.length > 13?
+      (currentMusic?.title | slice:0:13) + '...' :
+      currentMusic?.title}}
+    </span>
 
 
     <div class="btn-group">
         <ion-button fill="clear" (click)="previousAudio()">
             <
         </ion-button>
-    
+
         <ion-button fill="clear" *ngIf="!isPlaying" (click)="playAudio()">
             <ion-icon slot="icon-only" name="play-outline" ></ion-icon>
         </ion-button>
-    
+
         <ion-button fill="clear" *ngIf="isPlaying" (click)="pauseAudio()">
             <ion-icon slot="icon-only" name="pause-outline"></ion-icon>
         </ion-button>
-    
+
         <ion-button fill="clear" (click)="nextAudio()">
             >
         </ion-button>
-    
+
         <ion-button fill="clear">
             <ion-icon slot="icon-only" name="shuffle-outline"></ion-icon>
         </ion-button>
